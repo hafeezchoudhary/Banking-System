@@ -11,22 +11,24 @@ dotenv.config();
 const app = express();
 
 app.use(cors({
-  origin: ["http://localhost:3000","https://enbankingsystem.netlify.app"]
+  origin: ["http://localhost:3000", "https://enbankingsystem.netlify.app"]
 }));
+
 app.use(express.json());
 
-mongoose
-  .connect(process.env.MONGO_URI)
-  .then(() => console.log("MongoDB connected"))
-  .catch(err => console.log(err));
+// connect DB only once
+if (!mongoose.connection.readyState) {
+  mongoose.connect(process.env.MONGO_URI)
+    .then(() => console.log("MongoDB connected"))
+    .catch(err => console.log(err));
+}
 
-// routes
 app.use("/api/auth", authRoutes);
 app.use("/api/transactions", transactionRoutes);
 app.use("/api/bankers", bankerRoutes);
 
 app.get("/", (req, res) => {
-  res.send("Banking API is running");
+  res.send("Banking API running");
 });
 
-app.listen(5000, () => console.log("Server running on port 5000"));
+export default app;
