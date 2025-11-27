@@ -69,4 +69,45 @@ Customers can deposit/withdraw funds and view transactions, while admins/bankers
 Email: admin@gmail.com
 Password: admin@123
 ```
+## Theres an error while deplotment so use following : 
+
+# 🔧 **Installation & Setup**
+
+## 1️⃣ Clone the Repository
+
+```
+git clone https://github.com/yourusername/banking-system.git
+cd banking-system
+```
+
+## 2️⃣ Backend Setup
+
+```
+cd backend
+npm install
+```
+
+### Create `.env` file:
+
+```
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_secret_key
+```
+
+Start backend:
+
+```
+npm start
+```
+
+---
+
+## 3️⃣ Frontend Setup
+
+```
+cd ../frontend
+npm install
+npm run dev
+```
+
 
