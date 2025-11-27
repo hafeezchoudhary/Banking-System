@@ -10,7 +10,9 @@ import bankerRoutes from "./routes/bankerRoutes.js";
 dotenv.config();
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: ["http://localhost:3000","https://enbankingsystem.netlify.app/"]
+}));
 app.use(express.json());
 
 mongoose
