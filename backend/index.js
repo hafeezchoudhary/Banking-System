@@ -23,4 +23,8 @@ app.use("/api/auth", authRoutes);
 app.use("/api/transactions", transactionRoutes);
 app.use("/api/bankers", bankerRoutes);
 
+app.get("/", (req, res) => {
+  res.send("Banking API is running");
+});
+
 app.listen(5000, () => console.log("Server running on port 5000"));
