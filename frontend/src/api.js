@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "https://enbankingsystem.netlify.app/api",
+  baseURL: "https://banking-system-lyart.vercel.app/api",
 });
 
 API.interceptors.request.use((req) => {
